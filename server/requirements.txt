@@ -1,0 +1,11 @@
+# Additional Python packages needed to run
+# the metadata server for x86Launcher 2:
+
+# Basic HTTP service
+cherrypy
+
+# Image manipulation
+pillow
+
+# HTTP/HTTPS library
+requests

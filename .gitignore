@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+server/localsettings.py
+server/cache/*
+
 # Distribution / packaging
 .Python
 build/

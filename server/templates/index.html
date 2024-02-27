@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>x86Launcher2 Metadata Server</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/custom.min.css">
+	</head>
+
+	<body>
+	
+		<div class="container">
+		
+			<div class="row">
+			
+				<h2>x86Launcher2 Metadata Server</h2>
+				<p>This is the metadata server for <a href="https://github.com/megatron-uk/x86Launcher2">x86Launcher2</a>, a game catalogue and launcher application for retro DOS PC systems.</p>
+				<p>In order to use this server you must <a href="https://www.mobygames.com/info/api/">review the Mobygames API</a> information, sign up for a free <a href="https://www.mobygames.com/acct/create_account">Mobygames account</a> and then request an API key.
+				The API key must be saved in the <strong>settings.py</strong> file in the directory which has this <strong>server.py</strong> script.</p>
+				<p>This server makes calls to the Mobygames database on behalf of another client (for example, the x86Launcher2 application which runs on DOS).
+				The server will download metadata, retrieve and resample images and then send them on to the client.</p>
+				<p>A local cache of metadata and images is kept (see CACHE_SIZE in <strong>settings.py</strong>), in order to reduce the number of subsequent calls to Mobygames, as well as to quickly
+				rebuild resampled images from their master versions.</p>
+			</div>
+			
+			<hr>
+		
+			<div class="row">
+			
+				<h4>Available Methods</h4>
+				<p>The table below summarises the URL endpoints which a client may call in this server.</p>
+				
+				<table class="table table-bordered table-hover">
+					<thead>
+						<th scope="col">Method</th>
+						<th scope="col">Mandatory Parameters</th>
+						<th scope="col">Optional Parameters</th>
+						<th scope="col">Return Type</th>
+						<th scope="col">Description</th>
+						<th scope="col">View Example</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>/</strong></td>
+							<td></td>
+							<td></td>
+							<td>HTML</td>
+							<td>This page.</td>
+							<td><a href="/">Test</a></td>
+						</tr>
+						<tr>
+							<td><strong>/platforms</strong></td>
+							<td></td>
+							<td></td>
+							<td>JSON</td>
+							<td>Return the list of platform/system identifiers used by Mobygames.</td>
+							<td><a href="/platforms">Test</a></td>
+						</tr>
+						<tr>
+							<td><strong>/find</strong></td>
+							<td>title=STRING</td>
+							<td>platform=INT</td>
+							<td>JSON</td>
+							<td>Search Mobygames for matches to a partial game title.</td>
+							<td><a href="/find?title=Doom%20II&platform=dos">Test</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/custom.js"></script>
+		
+	</body>
+  
+</html>
