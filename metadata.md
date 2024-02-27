@@ -11,6 +11,7 @@ name=
 developer=
 publisher=
 year=
+rating=
 genre=
 series=
 path=
@@ -18,9 +19,14 @@ start=
 setup=
 min_cpu=
 min_ram=
+video=
 cover=
 thumb=
 screens=
+beeper=
+fm=
+digifx=
+midi=
 ```
 
 An example metadata file may look as follows:
@@ -33,15 +39,21 @@ developer=id Software, Inc.
 publisher=GT Interactive Software Corp.
 year=1994
 genre=Shooter
+rating=8.2
 series=Doom
 path=C:\Games\Doom2
 start=doom2.exe
 setup=setup.exe
 min_cpu=Intel i386 DX
 min_ram=4 MB
+video=EGA,VGA
 cover=cover.bmp
 thumb=covthumb.bmp
 screens=screen1.bmp,screen2.bmp,screen3.bmp
+beeper=0
+fm=1
+digifx=1
+midi=1
 ```
 
 In the case of the example above, the above metadata file would be in the following location:

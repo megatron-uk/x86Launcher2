@@ -50,6 +50,14 @@
 							<td><a href="/">Test</a></td>
 						</tr>
 						<tr>
+							<td><strong>/purge</strong></td>
+							<td></td>
+							<td></td>
+							<td>JSON</td>
+							<td>Purge all locally cached files (metadata and images).</td>
+							<td><a href="/purge">Test</a></td>
+						</tr>
+						<tr>
 							<td><strong>/platforms</strong></td>
 							<td></td>
 							<td></td>
@@ -58,12 +66,44 @@
 							<td><a href="/platforms">Test</a></td>
 						</tr>
 						<tr>
+							<td><strong>/platformid</strong></td>
+							<td>platform=STRING</td>
+							<td></td>
+							<td>JSON</td>
+							<td>Return the id for a given platform name in Mobygames.</td>
+							<td><a href="/platformid?platform=DOS">Test</a></td>
+						</tr>
+						<tr>
 							<td><strong>/find</strong></td>
 							<td>title=STRING</td>
-							<td>platform=INT</td>
+							<td>platform=STRING</td>
 							<td>JSON</td>
 							<td>Search Mobygames for matches to a partial game title.</td>
-							<td><a href="/find?title=Doom%20II&platform=dos">Test</a></td>
+							<td><a href="/find?title=Doom&platform=dos">Test</a></td>
+						</tr>
+						<tr>
+							<td><strong>/getdata</strong></td>
+							<td>moby_id=INT</td>
+							<td>platform=STRING</td>
+							<td>JSON</td>
+							<td>Return metadata for single game.</td>
+							<td><a href="/getdata?moby_id=1823&platform=dos">Test</a></td>
+						</tr>
+						<tr>
+							<td><strong>/getcovers</strong></td>
+							<td>moby_id=INT</td>
+							<td>platform=STRING, thumb=INT, cover_id=STRING</td>
+							<td>JSON/BINARY</td>
+							<td>Return cover/game box artwork for single game, downsampled/resized to 320x240, 8bpp. Set thumb=1 to get the thumnail version. Without cover_id, the list of available cover art is returned. With cover_id, then the binary data for that image is returned instead.</td>
+							<td><a href="/getcovers?moby_id=1068&platform=dos">Test</a></td>
+						</tr>
+						<tr>
+							<td><strong>/getscreens</strong></td>
+							<td>moby_id=INT</td>
+							<td>platform=STRING, screenshot_id=STRING</td>
+							<td>JSON/BINARY</td>
+							<td>Return screenshots for single game, downsampled, resized to 320x240, 8bpp. If screenshot_id is not provided, a list of the available image is returned. If screenshot_id is provided, then the binary data for that image is returned instead.</td>
+							<td><a href="/getscreens?moby_id=1068&platform=dos">Test</a></td>
 						</tr>
 					</tbody>
 				</table>
